@@ -3,7 +3,7 @@ const router = express.Router()
 const { News } = require('../../models')
 const authMiddlewares = require('../middlewares/auth.middlewares.js')
 
-router.delete('/news/:id', /* authMiddlewares, */ async (req, res) => {
+router.delete('/news/:id', authMiddlewares, async (req, res) => {
   try {
     const newsId = req.params.id
 

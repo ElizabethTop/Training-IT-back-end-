@@ -1,9 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const { User } = require('../../models')
-const authMiddlewares = require('../middlewares/auth.middlewares.js')
 
-router.get('/users', /* authMiddlewares, */ async (req, res) => {
+router.get('/users', async (req, res) => {
   try {
     const response = await User.findAll()
 

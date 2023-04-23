@@ -3,7 +3,7 @@ const router = express.Router()
 const { Article } = require('../../models')
 const authMiddlewares = require('../middlewares/auth.middlewares.js')
 
-router.post('/article', /* authMiddlewares ,*/ async (req, res) => {
+router.post('/article', authMiddlewares, async (req, res) => {
   try {
     const { group, article, text, links, author } = req.body
 
