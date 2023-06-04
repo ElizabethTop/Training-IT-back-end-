@@ -7,11 +7,22 @@ router.get('/examuser', authMiddlewares, async (req, res) => {
   try {
     const userId = res.locals.user.userId
 
-    const response = await Exam.findAll({
-      where: {
-        userId,
-      },
-    })
+    const { status } = req.body
+    let response
+
+    if (status && status === 'one') {
+      response = await Exam.findOne({
+        where: {
+          userId,
+        },
+      })
+    } else {
+      response = await Exam.findAll({
+        where: {
+          userId,
+        },
+      })
+    }
 
     res.status(200).json(response)
   } catch (error) {

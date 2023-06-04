@@ -30,6 +30,9 @@ module.exports = {
       passingExam: {
         type: Sequelize.INTEGER,
       },
+      dateExam: {
+        type: Sequelize.INTEGER,
+      },
 
       createdAt: {
         allowNull: false,

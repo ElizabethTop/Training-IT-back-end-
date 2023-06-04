@@ -6,12 +6,13 @@ const authMiddlewares = require('../middlewares/auth.middlewares.js')
 router.patch('/exam/:id', authMiddlewares, async (req, res) => {
   try {
     const examId = req.params.id
-    const { status, passingExam } = req.body
+    const { status, passingExam, dateExam } = req.body
 
     await Exam.update(
       {
         status,
         passingExam,
+        dateExam,
       },
       { where: { id: examId } }
     )

@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       cardHead: DataTypes.TEXT,
       status: DataTypes.TEXT,
       passingExam: DataTypes.INTEGER,
+      dateExam: DataTypes.INTEGER,
     },
     {
       sequelize,

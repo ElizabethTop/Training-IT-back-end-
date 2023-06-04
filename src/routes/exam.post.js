@@ -14,6 +14,7 @@ router.post('/exam', authMiddlewares, async (req, res) => {
       cardHead,
       status,
       passingExam: 0,
+      dateExam: 0,
     })
 
     res.status(201).json('Экзамен успешно создан')
